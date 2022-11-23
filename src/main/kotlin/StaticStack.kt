@@ -1,5 +1,5 @@
 import java.util.Scanner
-
+// Static stack using array
 
  var size  = 10
 var stackArray  = IntArray(size)
@@ -16,6 +16,7 @@ var stackArray  = IntArray(size)
             var value = scrn.nextInt()
           top++
           stackArray[top] = value
+            println("value popped")
         }
 
     }
@@ -32,12 +33,26 @@ var stackArray  = IntArray(size)
 
     }
   fun display(){
-      for (i in 0..top){
-          println(stackArray[i])
+      if (top == -1 ){
+          println("stack is empty")
       }
+      else{
+      for (i in 0..top){
+          print("" + stackArray[i] +" ")
+
+      }
+          println()
+      }
+
   }
 fun peak(){
-    println(" " + "$stackArray[top] ")
+    if (top == -1){
+        println("stack is empty")
+
+    }
+    else{
+        println("value at to is: " + stackArray[top]   )
+    }
 }
 
     fun main(args: Array<String>) {
